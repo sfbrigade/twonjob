@@ -5,8 +5,7 @@ import tweepy
 import json
 import os
 
-# Parameter should be formatted with @mention or #mention. Multiple parameters should be split with commas
-def pull(mention):
+def pull():
     # Twitter API credentials
     credentialsPath = r'credentials'
     with open(os.path.join(credentialsPath, 'twitter_credentials.json')) as cred_data:
@@ -17,11 +16,13 @@ def pull(mention):
         access_secret = info['ACCESS_SECRET']
 
     # Create the api endpoint
-
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     api = tweepy.API(auth)
 
-    # paramaters to search for
+    # mention to search for
+    mention = "@sfmta_muni"
+
+    # convert mention to parameters for query
     parameters = mention.replace(", ", " OR ")
 
     results = []
