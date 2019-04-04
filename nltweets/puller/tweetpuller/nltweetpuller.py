@@ -27,7 +27,7 @@ def pull(mention):
     results = []
 
     for tweet_info in tweepy.Cursor(api.search, q=parameters,
-                            tweet_mode='extended'):
+                            tweet_mode='extended').items():
         results.append(tweet_info)
     
     print ('Extracted ' + str(len(results)) 
