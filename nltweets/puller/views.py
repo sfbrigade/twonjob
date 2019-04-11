@@ -10,5 +10,6 @@ from puller import services
 
 # Create your views here.
 def webhook(request):
-    services.run_puller()
+    p = services.TweetPuller()
+    p.run_puller()
     return HttpResponse("Yeet!")
