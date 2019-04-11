@@ -1,5 +1,7 @@
 from tweetpuller import nltweetpuller
 
+import mongo
+
 class TweetPuller(object):
     def run_puller(self):
         self._pull_tweets()
