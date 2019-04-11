@@ -25,7 +25,7 @@ SECRET_KEY = 'm7e_bdehdyif5y@2h!te%*(52%hy!_4zwt3*#gi&ua90eeatb2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["nltweets.glitch.me", os.getenv('PROJECT_NAME') + ".glitch.me"]
+ALLOWED_HOSTS = ["sfbrigade-twonjob.glitch.me"]
 
 
 
