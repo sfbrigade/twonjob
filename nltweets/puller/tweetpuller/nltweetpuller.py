@@ -7,8 +7,10 @@ import os
 
 def pull():
     # Twitter API credentials
-    credentialsPath = r'credentials'
-    with open(os.path.join(credentialsPath, 'twitter_credentials.json')) as cred_data:
+    currentPath = os.path.dirname(__file__)
+    credentialsPath = 'credentials'
+    file = 'twitter_credentials.json'
+    with open(os.path.join(currentPath, credentialsPath, file)) as cred_data:
         info = json.load(cred_data)
         consumer_key = info['CONSUMER_KEY']
         consumer_secret = info['CONSUMER_SECRET']
