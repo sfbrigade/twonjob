@@ -10,7 +10,7 @@ def pull():
     currentPath = os.path.dirname(__file__)
     credentialsPath = 'credentials'
     file = 'twitter_credentials.json'
-    with open(os.path.join(currentPath, credentialsPath, file)) as cred_data:
+    with open(os.path.join(currentPath, credentialsPath, file), 'r') as cred_data:
         info = json.load(cred_data)
         consumer_key = info['CONSUMER_KEY']
         consumer_secret = info['CONSUMER_SECRET']
@@ -19,7 +19,7 @@ def pull():
 
     # Create the api endpoint
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-    api = tweepy.API(auth)
+    api = tweepy.API(auth, wait_on_rate_limit=True)
 
     # mention to search for
     mention = "@sfmta_muni"
